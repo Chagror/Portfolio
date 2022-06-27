@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Brick Breaker</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <script src="../js/modernizr.js"></script>
+</head>
+
+<body>
+<div id="preloader">
+    <div class="pre-container">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    </div>
+</div>
+
+<div class="top-bar">
+    <h1>Brick Breaker</h1>
+    <p><a href="../index.html" class="text-decoration-none">Home</a></p>
+</div>
+
+<div class="container main-container">
+    <div class="col-md-12">
+        <img src="../img/works/BrickBreaker/Intro.png" alt="" class="img-fluid mx-auto d-block"/>
+        <div class="h-30"></div>
+    </div>
+
+    <div class="col-md-12">
+        <h3>Brick Breaker - 2021</h3>
+        <h5>Casse-Briques sur SFML - Duo - 2 semaines</h5>
+        <div class="h-30"></div>
+    </div>
+
+    <div class="col-md-12">
+        <p>
+            Brick Breaker (2021) est un projet C++ sur SFML, réalisé en 2 semaines en binôme avec <a href="https://www.linkedin.com/in/thomas-verhille-2a3886173/">Thomas Verhille</a> , un camarade très doué et agréable que je recommande.<br>  
+			Le but de ce projet était de recréer un casse brique, mais en remplaçant la barre habituelle par un canon permettant de tirer les balles. 
+			<br><br>
+            Nous avons donc dû d'abord, tout en découvrant SFML, mettre en place des collisions basiques entre cercle et rectangle, puis entre différents cercle pour que les balles puissent rebondir les unes sur les autres.
+			Il nous a aussi fallu gérer et optimiser la boucle de jeu, l'update, et l'affichage des différents éléments du jeu.
+        </p>
+
+        <p>
+            Puisque nous étions relativement en avance sur le projet, nous avons pu ajouter différents types de briques, ce qui a nécessité de repenser la structure que nous avions pour nos premières briques.<br>
+			Le jeu final contient donc : <br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Les briques de bases<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Les briques rouges, avec de 3 à 5 points de vie.<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Les briques vertes, avec 2 ou 3 points, et regagant un point de vie toutes les quelques secondes.<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Les briques bombes, qui déclenchent une explosion infligeant 1 de dégats à toutes les cases adjacentes.<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Les briques balles, qui offrent une nouvelle balle au joueur. En effet, le joueur dispose d'un nombre limité de balle, ce qui l'oblige à bien réfléchir à leur utilisation.<br>
+			<br>
+			Nous avons aussi à la suite de ces ajouts implémenté la génération aléatoire des briques en jeu, afin de rendre chaque partie un peu plus unique.
+			<br><br>
+			Enfin, sur les derniers jours du projet, nous avons aussi pu ajouter un système de particules, ainsi que quelques sons et de la musique.
+			
+        </p>
+        <div class="h-30"></div>
+    </div>
+
+    <div class="row">
+        <figure class="figure col-md-6">
+            <img src="../img/works/BrickBreaker/playing1.png" class="figure-img img-fluid rounded mx-auto d-block"/>
+        </figure>
+        <div class="col-md-6">
+            <img src="../img/works/BrickBreaker/playing2.png" class="img-fluid rounded mx-auto d-block"/>
+        </div>
+    </div>
+
+    <div class="row">
+        <figure class="figure col-md-10 mx-auto d-block">
+			<video controls>
+				<source src="../img/works/BrickBreaker/demo.mp4" type="video/mp4"/>
+				<source src="../img/works/BrickBreaker/demo.webm" type="video/webm"/>
+			</video>
+        </figure>
+    </div>
+</div>
+
+<a href="" class="cd-top"><i class="ion-android-arrow-up"></i></a>
+
+<script src="../js/jquery-2.1.1.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/menu.js"></script>
+<script src="../js/animated-headline.js"></script>
+<script src="../js/isotope.pkgd.min.js"></script>
+<script src="../js/custom.js"></script>
+</body>
+</html>

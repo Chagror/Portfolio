@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Tank IA</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+
+    <script src="../js/modernizr.js"></script>
+</head>
+
+<body>
+<div id="preloader">
+    <div class="pre-container">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    </div>
+</div>
+<div class="top-bar">
+    <h1>Tank IA</h1>
+    <p><a href="../index.html" class="text-decoration-none">Home</a></p>
+</div>
+
+<div class="container main-container">
+    <div class="col-md-12">
+        <img src="../img/works/TankIA/Intro.png" alt="" class="img-fluid"/>
+        <div class="h-30"></div>
+    </div>
+
+    <div class="col-md-12">
+        <h3>Tank  IA - 2022</h3>
+        <h5>Projet IA sur Unity - Groupe de trois - 1 mois</h5>
+        <div class="h-30"></div>
+    </div>
+
+    <div class="col-md-12">
+        <p>
+            Le but de ce projet était de nous familiariser avec l'IA de manière générale.
+			Pour cela, le projet a été découpé en 3 parties : <br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Les algorithmes de pathfinding<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Les States-Machines<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Les Behaviour Tree<br>
+        </p>
+
+        <p>
+            La première partie a donc été consacrée à l'apprentissage de différents algorithmes de pathfinding (A*, Dijsktra), la compréhension de leur différences, et à leur implémentation basique.
+			Le système était basé sur un grille de dizaines de nodes, avec en vert les nodes accessibles, et celles ayant un obstacle. <br>
+			Nous avons aussi implémenté un système d'évitement d'obstacles mobiles.<br>
+        </p>
+        <div class="h-30"></div>
+    </div>
+	
+	<div class="row">
+        <figure class="figure col-md">
+            <img src="../img/works/TankIA/pathfinding1.png"
+                 class="figure-img img-fluid rounded mx-auto d-block"/>
+            <figcaption class="figure-caption center">La grille</figcaption>
+        </figure>
+        <figure class="figure col-md">
+            <img src="../img/works/TankIA/pathfinding2.png"
+                 class="figure-img img-fluid rounded mx-auto d-block"/>
+            <figcaption class="figure-caption center">Détection d'obstacles</figcaption>
+            <div class="h-30"></div>
+        </figure>
+    </div>
+	
+	<div class="col-md-12">
+        <p>
+            La deuxième partie du projet concernait les states machines. <br>
+			Nous avons donc dû re-créer une state machine fonctionnel dans Unity, à base de scriptable object, puis l'utiliser pour faire fonctionner la zone de capture du jeu.<br><br>
+			Nous avons pu utiliser une state machine puisque le fonctionnement de cette zone est relativement simple, et ne nécessite que peu d'états différents : <br>
+			<br>
+			La zone démarre neutre.<br>
+			<br>
+			Lorsqu'un tank entre dans la zone, si elle n'est pas contestée par un tank adverse, alors la jauge de capture commence à se remplir. <br>
+			Quand celle-ci est pleine, la zone est capturée par l'équipe du tank, qui gagne donc des points tant qu'un des tanks de l'équipe est présent sur la zone capturée.<br>
+			<br>
+			Lorsque des tanks de plusieurs équipes différentes sont en même temps sur la zone, elle devient contestée. <br>
+			Si elle était en train d'être capturée, alors la capture est mise en pause et stagne.
+			Si elle était déjà conquise par une des équipes, alors elle reste conquise, mais ne rapporte pas de point.<br>
+			<br>
+			Si plus aucun tank n'est présent sur la zone, alors celle-ci va doucement perdre sa jauge de capture, si elle arrive à 0, la zone redevient neutre.<br>
+			Il est important de noter que meêm si la zone n'est pas perdue si la jauge est redescendue à 50%, il est nécessaire qu'elle remonte à 100% pour gagner des points.<br>
+			<br>
+			Enfin, si la zone est capturée, mais que seul des ennemis occupent la position, alors la jauge de capture se vide beaucoup plus vite.<br>
+			Les ennemis doivent donc d'abord vider la jauge, puis peuvent après cela commencer la capture de la zone à leur tour.
+        </p>
+        <div class="h-30"></div>
+    </div>
+	
+	<div class="row">
+        <figure class="figure col-md">
+            <img src="../img/works/TankIA/sm1.png"
+                 class="figure-img img-fluid rounded mx-auto d-block"/>
+            <figcaption class="figure-caption center">Les States Machines en SO</figcaption>
+        </figure>
+        <figure class="figure col-md">
+            <img src="../img/works/TankIA/sm2.png"
+                 class="figure-img img-fluid rounded mx-auto d-block"/>
+            <figcaption class="figure-caption center">Zone en capture par les bleus</figcaption>
+            <div class="h-30"></div>
+        </figure>
+    </div>
+	
+	<div class="col-md-12">
+        <p>
+            Enfin, la dernière partie, et la plus conséquente, était de créer l'IA de nos tanks. Pour cela, nous avons utilisé un système de Behaviour Tree que nous avons crée pour l'occasion.<br>
+			Ainsi nous avons pu créer un BT différent pour chaque Tank de l'équipe : <br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Le tank Chasseur : Son compportement est simple, il cherche son ennemi le plus proche, et il part l'éliminer.<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Le tank de Capture : Son objectif principal est de se positionner sur le point de capture afin de marquer des points. 
+			Il n'attaque que pour se défendre, c'est à dire si un ennemi est trop proche de lui et de sa zone de capture.<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Le tank d'Escorte : Son comportement varie.
+			Si le tank de Capture est sur la zone, alors le tank d'Escorte va patrouiller autour, et se concentrer sur l'élimination des ennemis. 
+			Mais dans le cas ou le tank de Capture est détruit, alors il va essayer de le remplacer et va donc en priorité rejoindre la zone pour gagner du temps et continuer à marquer des points.<br>
+        </p>
+        <div class="h-30"></div>
+    </div>
+    <div class="row">
+        <figure class="figure col-md-5 mx-auto d-block">
+			<video controls>
+				<source src="../img/works/TankIA/demo1.mp4" type="video/mp4"/>
+			</video>
+        </figure>
+		<figure class="figure col-md-5 mx-auto d-block">
+			<video controls>
+				<source src="../img/works/TankIA/demo2.mp4" type="video/mp4"/>
+			</video>
+        </figure>
+    </div>
+</div>
+
+<a href="" class="cd-top"><i class="ion-android-arrow-up"></i></a>
+
+<script src="../js/jquery-2.1.1.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/menu.js"></script>
+<script src="../js/animated-headline.js"></script>
+<script src="../js/isotope.pkgd.min.js"></script>
+<script src="../js/custom.js"></script>
+</body>
+</html>

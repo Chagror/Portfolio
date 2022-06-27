@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Zelda like</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+
+    <script src="../js/modernizr.js"></script>
+</head>
+
+<body>
+<div id="preloader">
+    <div class="pre-container">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    </div>
+</div>
+
+<div class="top-bar">
+    <h1>Zelda like</h1>
+    <p><a href="../index.html" class="text-decoration-none">Home</a></p>
+</div>
+
+<div class="container main-container">
+    <div class="col-md-12">
+        <img src="../img/works/ZeldaLike/Intro.png" alt="" class="img-fluid mx-auto d-block"/>
+        <div class="h-30"></div>
+    </div>
+
+    <div class="col-md-12">
+        <h3>Zelda like - 2020</h3>
+        <h5>Projet Unity - Seul - 1 semaine</h5>
+        <div class="h-30"></div>
+    </div>
+
+    <div class="col-md-12">
+        <p>
+            Pour ce projet, le type de jeu demandé était un Zelda-like comportant au moins un ennemi basique, un boss et une énigme.</p>
+
+        <p>
+            Mon jeu est donc un jeu basique en 2D, avec comme ennemis de base des slimes. 
+			Le gameplay est simple, les slimes poursuivent le joueur, et lorsqu'ils réussissent à le toucher, celui-ci perd un point de vie. Si il atteint 0, il perd la partie.<br>
+			Pour gagner, le joueur doit éliminer le boss, qui est un slime géant, avec une plus grande portée et plus de points de vie.<br>
+			<br>
+			
+			Le premier point dans le développement fut de créer le personnage et ses animations. <br>
+			J'ai donc créer l'animator et les transitions nécessaires, ainsi que deux Blend Tree, afin de gérer les directions, que ce soit pour le déplacement ou l'attaque.<br>
+			J'ai aussi ajouter à l'animation d'attaque un polygon collider afin que la collision respecte l'animation.
+			<br>
+        </p>
+        <div class="h-30"></div>
+    </div>
+
+    <div class="row">
+        <figure class="figure col-md">
+            <img src="../img/works/ZeldaLike/Animator.png"
+                 class="figure-img img-fluid rounded mx-auto d-block"/>
+            <figcaption class="figure-caption center">Animator du joueur</figcaption>
+        </figure>
+        <figure class="figure col-md">
+            <img src="../img/works/ZeldaLike/Blend Tree.png"
+                 class="figure-img img-fluid rounded mx-auto d-block"/>
+            <figcaption class="figure-caption center">Blend Tree du déplacement</figcaption>
+        </figure>
+        <figure class="figure col-md-3">
+            <img src="../img/works/ZeldaLike/Polygon Collider.png"
+                 class="figure-img img-fluid rounded mx-auto d-block"/>
+            <figcaption class="figure-caption center">Polygon collider de l'attaque</figcaption>
+        </figure>
+    </div>
+
+    <div class="col-md-12">
+        <p>
+            Les ennemis sont très basiques, ils suivent le joueur lorsque celui-ci est suffisament proche, 
+			et si ils arrivent à portée d'attaque (le joueur rentre dans leur hitbox d'attaque), alors le joueur perd un point de vie.<br>
+            Le joueur peut donner un coup d'épee avec la touche Espace, si un slime est touché par l'attaque, alors il perd un point de vie et est repoussé. Les slimes de bases ont trois points de vies.<br>
+			<br>
+            L'énigme du jeu consiste simplement à casser tout les pots de la carte. En effet, si le coup d'épée du joueur touche un pot, celui-ci se brise.<br>
+			Si tout les pots de la carte sont détruits, un réceptacle de coeur apparait.<br>
+            Lorsque le joueur marche sur le réceptacle de coeur, il obtient une vie en plus.
+        </p>
+        <div class="h-30"></div>
+    </div>
+
+    <div class="row">
+        <figure class="figure col-md">
+            <img src="../img/works/ZeldaLike/Pot.png"
+                 class="figure-img img-fluid rounded mx-auto d-block"/>
+            <figcaption class="figure-caption center">Un pot</figcaption>
+        </figure>
+        <figure class="figure col-md">
+            <img src="../img/works/ZeldaLike/Pot cassé.png"
+                 class="figure-img img-fluid rounded mx-auto d-block"/>
+            <figcaption class="figure-caption center">Destruction violente d'un pot</figcaption>
+        </figure>        
+    </div>
+    <div class="row">
+		<figure class="figure col-md">
+            <img src="../img/works/ZeldaLike/receptacle.png"
+                 class="figure-img img-fluid rounded mx-auto d-block"/>
+            <figcaption class="figure-caption center">Le réceptacle en récompense de l'énigme</figcaption>
+            <div class="h-30"></div>
+        </figure>
+        <figure class="figure col-md">
+            <img src="../img/works/ZeldaLike/coeur gagné.png"
+                 class="figure-img img-fluid rounded mx-auto d-block"/>
+            <figcaption class="figure-caption center">Le joueur a obtenu un 4e coeur</figcaption>
+
+        </figure>
+        <figure class="figure col-md">
+            <img src="../img/works/ZeldaLike/boss.png"
+                 class="figure-img img-fluid rounded mx-auto d-block"/>
+            <figcaption class="figure-caption center">Le boss</figcaption>
+        </figure>
+    </div>
+</div>
+
+<a href="" class="cd-top"><i class="ion-android-arrow-up"></i></a>
+
+<script src="../js/jquery-2.1.1.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/menu.js"></script>
+<script src="../js/animated-headline.js"></script>
+<script src="../js/isotope.pkgd.min.js"></script>
+<script src="../js/custom.js"></script>
+</body>
+</html>
